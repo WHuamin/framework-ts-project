@@ -1,24 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ESNext", // 目标转化的语法
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",  // 转化的格式
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],  // 支持esnext和dom语法
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "bundler",  // 解析规则
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // 不允许ts编译jsx语法
 
     /* Linting */
-    "strict": true,
+    "strict": true, // 严格模式
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "sourceMap": true, // 启动sourcemap调试
+    "esModuleInterop": true, // es6和commonjs 转化
 
     // 配置@别名
     "baseUrl": ".",
@@ -26,6 +28,7 @@
       "@/*": ["src/*"]
     }
   },
+  // 编译哪些文件
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

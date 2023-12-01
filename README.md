@@ -6,8 +6,31 @@
 node：v20.9.0
 npm:：v10.1.0
 pnpm: v8.11.0
-```
 
+建议安装：
+1. Node 版本管理管理工具 NVM
+2. 镜像管理工具 NRM
+
+```
+## 项目文件说明
+```
+1. node_modules 项目依赖
+2. public 公共静态资源
+3. vite.config.ts Vite构建工具配置
+4. tsconfig.json TS配置文件
+5. README.md 项目简介文档，本项目的此文件，主要来记录整个项目的搭建过程 技术 记录
+6. package.json 项目依赖配置
+7. env.d.ts 声明文件，用来识别.vue文件的类型=>垫片 【ts只能处理ts文件，.vue结尾得文件要模块声明】
+
+index.html
+2. App.vue 称为父组件，项目的所有组件都是这个组件的子孙组件
+3. main.ts 应用程序的入口文件, App.vue就是通过这个文件和 index.html 里的 <div id="app"> 产生联系的
+4. 
+5. 
+6. 
+
+
+```
 ## 构建项目
 ```
 1. 初始化：
@@ -52,5 +75,35 @@ pnpm: v8.11.0
       },
       ...
    }
+
+```
+
+## 工具安装使用说明
+
+### Node 管理工具 NVM
+```
+win系统建议安装 nvm 进行 Node 版本管理，Node 建议安装【LTS 长期稳定】的版本
+
+显示可以安装的所有nodejs版本 nvm list available 
+安装指定版本的nodejs nvm install <version> 
+显示已安装版本列表 nvm list
+使用指定版本node nvm use [version]
+卸载指定版本node nvm uninstall <version>
+
+```
+
+### 镜像管理工具 NRM
+```
+安装依赖 【npm install -g nrm】
+查看镜像列表 nrm ls
+查看当前使用的镜像 nrm current 
+添加镜像 nrm add <名称> <远程地址或私服地址>
+删除镜像 nrm del <名称>
+切换镜像 nrm use <名称> 
+测试镜像网络传输速度 nrm test <名称>
+查看nrm版本号 nrm <-version | -V> 
+查看nrm相关信息 nrm <-help | -h>
+打开镜像主页 nrm home <名称> [browser]
+上传npm包或命令程序 nrm publish [<tarball>|<folder>]
 
 ```
