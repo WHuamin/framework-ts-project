@@ -25,3 +25,32 @@ pnpm: v8.11.0
 将代码提交到 Git 远程仓库 git push 【注意：pull == fetch + merge】
 
 ```
+
+## 配置 @ 别名
+```
+1. 安装依赖 npm install @types/node 
+2. 修改 vite.config.ts
+   import { resolve } from 'path'
+   export default defineConfig({
+      ...
+      resolve:{
+         alias:{
+            '@': resolve(__dirname, './src')
+         }
+      }
+   })
+
+3. 修改 tsconfig.json
+   {
+      "compilerOptions": {
+         ...
+         // 配置@别名
+         "baseUrl": ".",
+         "paths": {
+            "@/*": ["src/*"]
+         }
+      },
+      ...
+   }
+
+```
