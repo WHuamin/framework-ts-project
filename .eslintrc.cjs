@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "vue"],
   rules: {
-    // 'vue/multi-word-component-names': 'off', //组件命名校验关闭
+    'vue/multi-word-component-names': 'off', //组件命名校验关闭
     // 自定义规则// 自带的prettier规则
     "prettier/prettier": [
       "error",
