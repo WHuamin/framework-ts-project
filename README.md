@@ -14,6 +14,46 @@ pnpm: v8.11.0
 1. Node 版本管理管理工具 NVM
 2. 镜像管理工具 NRM
 
+分支管理
+master
+项目基本架构开发分支 master <- dev
+
+项目基本开发分支:
+基于 dev 分支开发：移动端 app-dev 、Web端 web-dev
+比如：移动端功能开发分支【xxx分支】： app-dev <- xxx分支
+
+注意：开发只能拉取dev分支的代码，不能往dev分支上提交代码，如需修改项目基本架构代码，则需要基于dev分支，新建分支开发，开发完成后，将本分支代码合并到dev分支，并删除本分支，之后，移动端/Web端开发分支进行更新拉取dev分支代码
+
+测试分支：
+移动端 dev <- app-dev
+
+```
+
+## 项目分支管理
+
+```
+基本架构分支：
+生产分支 master
+测试分支 basic-test
+开发分支 basic-dev
+
+开发 到 生产 流程： 【basic-dev-xx -> basic-dev -> basic-test -> master】
+基本架构开发基于 basic-dev 分支，
+比如开发 xx 功能：
+在 basic-dev 分支，新建分支（basic-dev-xx），开发完成后，将 basic-dev-xx 分支代码合并到 basic-dev 分支，并删除 basic-dev 分支，之后合并到 basic-test 分支上进行测试，测试通过则合并到 master，供其他项目更新使用。
+
+web 端分支： 【web-dev-xx -> web-dev -> web-test -> web-master】
+生产分支 web-master
+测试分支 web-test
+开发分支 web-dev： 基于 master 分支（基本架构生产分支，不可往 master 分支上提交代码，只允许更新拉取代码）
+
+app 端分支： 【app-dev-xx -> app-dev -> app-test -> app-master】
+生产分支 app-master
+测试分支 app-test
+开发分支 app-dev： 基于 master 分支（基本架构生产分支，不可往 master 分支上提交代码，只允许更新拉取代码）
+
+注意：开发只能拉取 master 分支的代码，不能往 master 分支上提交代码，如需修改项目基本架构代码，则需要基于 basic-dev 分支，新建分支开发，开发完成后，将本分支代码合并到 basic-dev 分支，并删除本分支，之后，移动端/Web端开发分支需要更新基本框架则拉取 master 分支代码
+
 ```
 
 ## 项目文件说明
