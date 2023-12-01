@@ -11,7 +11,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended", // typescript 规则
     "plugin:vue/vue3-essential", // eslint-plugin-vue
-    "@vue/eslint-config-prettier"
+    "@vue/eslint-config-prettier",
+		"./.eslintrc-auto-import.json"
   ],
   overrides: [
     {

@@ -144,6 +144,7 @@ Prettier 只用来格式化代码，.eslint和.prettierrc.js要配合使用
 2. 安装 Vscode 插件（StyleLint）
 3. 在目录的 .vscode 文件夹下新建 settings.json
 4. 配置 StyleLint（.stylelintrc.js）：
+5. .stylelintignore 文件告诉 stylelint 去忽略特定的文件和目录
 ```
 
 ### 6.Git 流程规范配置
@@ -204,6 +205,24 @@ cz-git（指定提交文字规范，一款工程性更强，高度自定义，�
 
 ```
 1. 安装依赖 pnpm install vue-router
+```
+
+### 7. 组件name属性设置
+
+```
+Vue 在默认情况下会将文件名定义为 name 属性，但文件名是可以重复的，如出现一大堆 index.vue。
+1. 安装依赖 pnpm i vite-plugin-vue-setup-extend
+2. 配置vite.config.ts
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+export default defineConfig({
+  plugins: [
+		...
+		VueSetupExtend()
+	]
+});
+3. 使用
+<script setup name="User"></script>
+
 ```
 
 ## 工具安装使用说明
