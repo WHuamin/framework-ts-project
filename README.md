@@ -24,6 +24,7 @@ pnpm: v8.11.0
 5. README.md 项目简介文档，本项目的此文件，主要来记录整个项目的搭建过程 技术 记录
 6. package.json 项目依赖配置
 7. env.d.ts 声明文件，用来识别.vue文件的类型=>垫片 【ts只能处理ts文件，.vue结尾得文件要模块声明】
+8. .editorconfig 配置 EditorConfig
 
 index.html
 2. App.vue 称为父组件，项目的所有组件都是这个组件的子孙组件
@@ -36,6 +37,8 @@ index.html
 ```
 
 ## 构建项目
+
+### 1.构建项目
 
 ```
 1. 初始化：
@@ -54,7 +57,7 @@ index.html
 
 ```
 
-## 配置 @ 别名
+### 2.配置 @ 别名
 
 ```
 1. 安装依赖 npm install @types/node
@@ -84,7 +87,7 @@ index.html
 
 ```
 
-## Eslint 配置
+### 3.Eslint 配置
 
 ```
 Eslint 只检测代码规范
@@ -104,10 +107,10 @@ npx eslint --init
 .eslintignore 配置
 是配置 Eslint 忽略检查的文件
 在项目根目录建【.eslintignore】
+//  快速定位到error的文件: --quiet --ext
 "scripts": {
    ...
-    "lint": "eslint --fix --ext .ts,.tsx,.vue src --quiet", // src下的.ts,.tsx,.vue文件，忽略warn报错
-
+    "lint:eslint": "eslint --fix --ext --quiet .js,.ts,.vue src", // src下的.js, .ts,.vue文件，忽略warn报错
 },
 "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.13.1",
@@ -120,7 +123,7 @@ npx eslint --init
 
 ```
 
-## Prettier 配置
+### 4.Prettier 配置
 
 ```
 Prettier 只用来格式化代码，.eslint和.prettierrc.js要配合使用
@@ -129,6 +132,60 @@ Prettier 只用来格式化代码，.eslint和.prettierrc.js要配合使用
 .prettierrc.js 格式化代码风格
 .prettierignore 是配置 Prettier 忽略检查的文件
 
+```
+
+### 5.Git 流程规范配置
+
+#### 操作 git 钩子的工具 husky
+
+```
+1. 安装依赖 pnpm install husky -D
+2. 在 package.json 文件中，添加：
+"scripts": {
+   "prepare": "husky install"
+}
+3. pnpm run prepare 在根目录生成 .husky 目录
+```
+
+#### 本地暂存代码检查工具 lint-staged
+
+```
+1. 安装依赖 pnpm install lint-staged -D
+2. 配置命令（执行以下命令，在husky文件夹下自动生成pre-commit文件）：
+npx husky add .husky/pre-commit "npm run lint:lint-staged"
+作用：通过钩子函数，判断提交的代码是否符合规范，并使用 prettier 格式化代码
+
+3. pnpm run prepare 在根目录生成 .husky 目录
+4. 新增 lint-staged.config.js 文件
+```
+
+#### commit 信息校验工具，不符合则报错 commitlint
+
+```
+1. 安装依赖 pnpm i @commitlint/cli @commitlint/config-conventional -D
+2. 配置命令（在.husky 文件夹下自动生成 commit-msg 文件，执行如下代码自动生成）：
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+
+3. pnpm run prepare 在根目录生成 .husky 目录
+4. 新增 lint-staged.config.js 文件
+```
+
+#### commitizen cz-git
+
+```
+commitizen（基于 Node.js 的 git commit 命令行工具，生成标准化的 message）
+cz-git（指定提交文字规范，一款工程性更强，高度自定义，标准输出格式的 commitizen 适配器）
+1. 安装依赖 pnpm install commitizen -D
+2. 安装依赖 pnpm install cz-git -D
+3. 配置 package.json：
+"config": {
+  "commitizen": {
+    "path": "node_modules/cz-git"
+  }
+}
+
+4. 新建 commitlint.config.js 文件
+5. 配置 package.json 命令
 ```
 
 ## 工具安装使用说明

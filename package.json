@@ -2,26 +2,40 @@
   "name": "basic-vite-ts-framework",
   "private": true,
   "version": "0.0.1",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix --ext .ts,.tsx,.vue src --quiet",
-    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\""
+    "lint:eslint": "eslint --fix --ext --quiet .js,.ts,.vue src",
+    "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
+    "lint:lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "commit": "git pull && git add -A && git-cz && git push"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "@types/node": "^20.10.1",
     "vue": "^3.3.8"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
     "@vitejs/plugin-vue": "^4.5.0",
     "@vue/eslint-config-prettier": "^8.0.0",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.1",
     "eslint": "^8.54.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-vue": "^9.19.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
