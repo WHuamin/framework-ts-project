@@ -1,4 +1,5 @@
 # 前端项目基础框架架构配置
+
 ```
 技术栈：Vue 3 + TypeScript + Vite
 
@@ -12,7 +13,9 @@ pnpm: v8.11.0
 2. 镜像管理工具 NRM
 
 ```
+
 ## 项目文件说明
+
 ```
 1. node_modules 项目依赖
 2. public 公共静态资源
@@ -25,13 +28,15 @@ pnpm: v8.11.0
 index.html
 2. App.vue 称为父组件，项目的所有组件都是这个组件的子孙组件
 3. main.ts 应用程序的入口文件, App.vue就是通过这个文件和 index.html 里的 <div id="app"> 产生联系的
-4. 
-5. 
-6. 
+4.
+5.
+6.
 
 
 ```
+
 ## 构建项目
+
 ```
 1. 初始化：
 【pnpm create vite@latest】
@@ -39,7 +44,7 @@ index.html
 
 2. 删除没必要的文件代码
 
-3. git 
+3. git
 初始化 git init
 链接Git本地仓库和Git远程仓库 git remote add origin 远程库地址
 查本地代码当前的状态 git status
@@ -50,8 +55,9 @@ index.html
 ```
 
 ## 配置 @ 别名
+
 ```
-1. 安装依赖 npm install @types/node 
+1. 安装依赖 npm install @types/node
 2. 修改 vite.config.ts
    import { resolve } from 'path'
    export default defineConfig({
@@ -78,7 +84,8 @@ index.html
 
 ```
 
-## Eslint配置
+## Eslint 配置
+
 ```
 Eslint 只检测代码规范
 npx eslint --init
@@ -100,7 +107,7 @@ npx eslint --init
 "scripts": {
    ...
     "lint": "eslint --fix --ext .ts,.tsx,.vue src --quiet", // src下的.ts,.tsx,.vue文件，忽略warn报错
-    
+
 },
 "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.13.1",
@@ -113,14 +120,26 @@ npx eslint --init
 
 ```
 
+## Prettier 配置
+
+```
+Prettier 只用来格式化代码，.eslint和.prettierrc.js要配合使用
+安装依赖 pnpm install prettier eslint-plugin-prettier @vue/eslint-config-prettier -D
+.eslintrc.cjs 中进行配置
+.prettierrc.js 格式化代码风格
+.prettierignore 是配置 Prettier 忽略检查的文件
+
+```
+
 ## 工具安装使用说明
 
 ### Node 管理工具 NVM
+
 ```
 win系统建议安装 nvm 进行 Node 版本管理，Node 建议安装【LTS 长期稳定】的版本
 
-显示可以安装的所有nodejs版本 nvm list available 
-安装指定版本的nodejs nvm install <version> 
+显示可以安装的所有nodejs版本 nvm list available
+安装指定版本的nodejs nvm install <version>
 显示已安装版本列表 nvm list
 使用指定版本node nvm use [version]
 卸载指定版本node nvm uninstall <version>
@@ -128,15 +147,16 @@ win系统建议安装 nvm 进行 Node 版本管理，Node 建议安装【LTS 长
 ```
 
 ### 镜像管理工具 NRM
+
 ```
 安装依赖 【npm install -g nrm】
 查看镜像列表 nrm ls
-查看当前使用的镜像 nrm current 
+查看当前使用的镜像 nrm current
 添加镜像 nrm add <名称> <远程地址或私服地址>
 删除镜像 nrm del <名称>
-切换镜像 nrm use <名称> 
+切换镜像 nrm use <名称>
 测试镜像网络传输速度 nrm test <名称>
-查看nrm版本号 nrm <-version | -V> 
+查看nrm版本号 nrm <-version | -V>
 查看nrm相关信息 nrm <-help | -h>
 打开镜像主页 nrm home <名称> [browser]
 上传npm包或命令程序 nrm publish [<tarball>|<folder>]

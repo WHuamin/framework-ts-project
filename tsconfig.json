@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "ESNext", // 目标转化的语法
     "useDefineForClassFields": true,
-    "module": "ESNext",  // 转化的格式
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],  // 支持esnext和dom语法
+    "module": "ESNext", // 转化的格式
+    "lib": ["ESNext", "DOM", "DOM.Iterable"], // 支持esnext和dom语法
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",  // 解析规则
+    "moduleResolution": "bundler", // 解析规则
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
