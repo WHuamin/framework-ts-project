@@ -3,6 +3,8 @@
 ```
 技术栈：Vue 3 + TypeScript + Vite
 
+使用husky强制码提交规范及eslint校验
+
 对应版本：
 node：v20.9.0
 npm:：v10.1.0
@@ -134,7 +136,17 @@ Prettier 只用来格式化代码，.eslint和.prettierrc.js要配合使用
 
 ```
 
-### 5.Git 流程规范配置
+### 5.样式规范工具 StyleLint
+
+```
+1. 安装依赖 pnpm i stylelint stylelint-config-html stylelint-config-recommended-scss stylelint-config-recommended-vue stylelint-config-standard stylelint-config-standard-scss stylelint-config-recess-order postcss postcss-html stylelint-config-prettier -D
+
+2. 安装 Vscode 插件（StyleLint）
+3. 在目录的 .vscode 文件夹下新建 settings.json
+4. 配置 StyleLint（.stylelintrc.js）：
+```
+
+### 6.Git 流程规范配置
 
 #### 操作 git 钩子的工具 husky
 
@@ -189,6 +201,14 @@ cz-git（指定提交文字规范，一款工程性更强，高度自定义，�
 ```
 
 ## 工具安装使用说明
+
+### 参考文档
+
+```
+项目构建 https://blog.csdn.net/attengtiong/article/details/128393733
+规范配置 https://blog.csdn.net/TanHao8/article/details/129619313
+
+```
 
 ### Node 管理工具 NVM
 
