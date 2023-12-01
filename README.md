@@ -78,6 +78,41 @@ index.html
 
 ```
 
+## Eslint配置
+```
+Eslint 只检测代码规范
+npx eslint --init
+选项
+√ How would you like to use ESLint? · problems
+√ What type of modules does your project use? · esm
+√ Which framework does your project use? · vue
+√ Does your project use TypeScript? · No / Yes
+√ Where does your code run? · browser, node
+√ What format do you want your config file to be in? · JavaScript
+√ Would you like to install them now? · No / Yes
+√ Which package manager do you want to use? · pnpm
+
+生成 .eslintrc.cjs 文件
+
+.eslintignore 配置
+是配置 Eslint 忽略检查的文件
+在项目根目录建【.eslintignore】
+"scripts": {
+   ...
+    "lint": "eslint --fix --ext .ts,.tsx,.vue src --quiet", // src下的.ts,.tsx,.vue文件，忽略warn报错
+    
+},
+"devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-vue": "^9.19.2",
+    ...
+}
+
+```
+
 ## 工具安装使用说明
 
 ### Node 管理工具 NVM
