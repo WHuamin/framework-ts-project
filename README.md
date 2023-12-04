@@ -67,14 +67,11 @@ app 端分支： 【app-dev-xx -> app-dev -> app-test -> app-master】
 6. package.json 项目依赖配置
 7. env.d.ts 声明文件，用来识别.vue文件的类型=>垫片 【ts只能处理ts文件，.vue结尾得文件要模块声明】
 8. .editorconfig 配置 EditorConfig
-
-index.html
-2. App.vue 称为父组件，项目的所有组件都是这个组件的子孙组件
-3. main.ts 应用程序的入口文件, App.vue就是通过这个文件和 index.html 里的 <div id="app"> 产生联系的
-4.
-5.
-6.
-
+9. index.html
+10. App.vue 称为父组件，项目的所有组件都是这个组件的子孙组件
+11. main.ts 应用程序的入口文件, App.vue就是通过这个文件和 index.html 里的 <div id="app"> 产生联系的
+12. interface 存放各个页面的类型(接口定义)
+13. utils 存放公共工具类
 
 ```
 
