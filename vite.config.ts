@@ -17,7 +17,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src")
+      "@": resolve(__dirname, "./src"),
+      "@constant": resolve(__dirname, "./src/utils/constant"),
+      "@api": resolve(__dirname, "./src/service/api")
     }
   }
 });

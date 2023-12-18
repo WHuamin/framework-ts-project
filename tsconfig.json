@@ -25,7 +25,9 @@
     // 配置@别名
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@constant/*": ["src/utils/constant/*"],
+      "@api/*": ["src/service/api/*"]
     }
   },
   // 编译哪些文件
