@@ -1,7 +1,7 @@
 {
 	"name": "basic-framework",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -10,7 +10,7 @@
 		"lint:check": "eslint src",
 		"lint:fix": "eslint src --fix",
 		"format": "prettier --write \"./**/*.{html,vue,js,ts,json,md}\" ",
-		"lint:style": "stylelint src/**/*.{css,scss,vue} --cache --fix",
+		"lint:style": "stylelint src/**/*.{css,scss,sass,less,vue} --cache --fix",
 		"prepare": "husky install",
 		"commitlint": "commitlint --config commitlint.config.cjs -e -V"
 	},

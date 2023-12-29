@@ -1,2 +1,6 @@
 dist
 node_modules
+
+.eslintrc.cjs
+.prettierrc.json
+.stylelintrc.cjs

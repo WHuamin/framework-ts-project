@@ -4,6 +4,7 @@
 /test/*
 /html/*
 /public/*
+src/assets
 
 # 其他类型文件
 *.js
