@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import { RouterView } from 'vue-router'
+</script>
 
 <template>
 	<el-row class="mb-4">
@@ -9,4 +11,5 @@
 		<el-button type="warning">Warning</el-button>
 		<el-button type="danger">Danger</el-button>
 	</el-row>
+	<RouterView />
 </template>
