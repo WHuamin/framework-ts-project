@@ -1,4 +1,15 @@
+# 测试和打包目录
 /node_modules/*
 /dist/*
+/test/*
 /html/*
 /public/*
+
+# 其他类型文件
+*.js
+*.jpg
+*.png
+*.eot
+*.ttf
+*.woff
+*.json
