@@ -5,7 +5,7 @@ module.exports = {
 		node: true
 	},
 	extends: [
-		'eslint:recommended',
+		// 'eslint:recommended', // 注释掉的原因，全局声明（*.d.ts）无法使用
 		'plugin:@typescript-eslint/recommended',
 		'plugin:vue/vue3-essential',
 		'plugin:prettier/recommended'

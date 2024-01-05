@@ -2,8 +2,9 @@ import type { App } from 'vue'
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 // 引入 common.ts
 import CommonRouter from './modules/common'
+import ExampleRouter from './modules/examples'
 
-export const publicRoutes: Array<RouteRecordRaw> = [...CommonRouter]
+export const publicRoutes: Array<RouteRecordRaw> = [...CommonRouter, ...ExampleRouter]
 
 const router = createRouter({
 	history: createWebHashHistory(),
