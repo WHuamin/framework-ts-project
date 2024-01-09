@@ -6,6 +6,7 @@ interface InputDefaultConfig {
 	activeValue?: any
 	isCheckAll?: boolean
 	showCheckAll?: boolean
+	checkAllText?: string
 }
 // 优雅解决typescript报错：“元素隐式具有 “any“ 类型，因为类型为 “string“ 的表达式不能用于索引类型”，解决方案：定义一个string作为key的类型
 type stringKey = Record<string, InputDefaultConfig>

@@ -1,10 +1,10 @@
 export default [
 	// 基础组件
-	// {
-	// 	path: '/basicTable',
-	// 	name: 'basicTableExample',
-	// 	component: () => import('@/views/examples/basicTable.vue')
-	// },
+	{
+		path: '/table',
+		name: 'tableExample',
+		component: () => import('@/views/examples/table/index.vue')
+	},
 	// vue3 语法
 	{
 		path: '/syntax',
